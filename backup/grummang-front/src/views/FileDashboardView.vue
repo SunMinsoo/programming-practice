@@ -82,20 +82,22 @@ let statistics = ref(null);
 
 const reponseData = ref(null);
 
-Promise.all([
-  totalFileInfoApi(),
-]).then((values) => {
-  reponseData.value = values[0].data; 
-  totalCount = values[0].data.totalCount;
-  malwareRatio.value = Math.floor((values[0].data.totalMalware / values[0].data.totalCount) * 100);
-  dlpRatio.value = Math.floor((values[0].data.totalDlp / values[0].data.totalCount) * 100);
-  statistics.value = values[0].data.statistics;
-  isApiOk.value = true;
-}).catch((err) => {
 
-}).finally(() => {
-  loading.value = false;
-});
+// 원본용 코드
+// Promise.all([
+//   totalFileInfoApi(),
+// ]).then((values) => {
+//   reponseData.value = values[0].data; 
+//   totalCount = values[0].data.totalCount;
+//   malwareRatio.value = Math.floor((values[0].data.totalMalware / values[0].data.totalCount) * 100);
+//   dlpRatio.value = Math.floor((values[0].data.totalDlp / values[0].data.totalCount) * 100);
+//   statistics.value = values[0].data.statistics;
+//   isApiOk.value = true;
+// }).catch((err) => {
+
+// }).finally(() => {
+//   loading.value = false;
+// });
 
 const formatFileSize = (bytes) => {
   const sizes = ['Bytes', 'KB', 'MB', 'GB', 'TB'];
@@ -103,5 +105,246 @@ const formatFileSize = (bytes) => {
   const i = parseInt(Math.floor(Math.log(bytes) / Math.log(1024)));
   return Math.round(bytes / Math.pow(1024, i), 2) + ' ' + sizes[i];
 };
+
+
+/* 
+테스트용 성공으로 가정
+*/
+const values = [
+{
+    "status": "success",
+    "data": {
+        "totalCount": 74,
+        "totalVolume": 125508246,
+        "totalDlp": 5,
+        "totalMalware": 19,
+        "totalType": [
+            {
+                "type": "cpp",
+                "count": 5
+            },
+            {
+                "type": "pdf",
+                "count": 15
+            },
+            {
+                "type": "docx",
+                "count": 4
+            },
+            {
+                "type": "binary",
+                "count": 3
+            },
+            {
+                "type": "exe",
+                "count": 7
+            },
+            {
+                "type": "php",
+                "count": 2
+            },
+            {
+                "type": "xlsx",
+                "count": 9
+            },
+            {
+                "type": "python",
+                "count": 1
+            },
+            {
+                "type": "png",
+                "count": 8
+            },
+            {
+                "type": "text",
+                "count": 9
+            },
+            {
+                "type": "csv",
+                "count": 1
+            },
+            {
+                "type": "xls",
+                "count": 2
+            },
+            {
+                "type": "zip",
+                "count": 2
+            },
+            {
+                "type": "jpg",
+                "count": 1
+            },
+            {
+                "type": "doc",
+                "count": 1
+            },
+            {
+                "type": "pptx",
+                "count": 4
+            }
+        ],
+        "statistics": [
+            {
+                "date": "2024-09-04",
+                "volume": 0,
+                "count": 0
+            },
+            {
+                "date": "2024-09-05",
+                "volume": 0,
+                "count": 0
+            },
+            {
+                "date": "2024-09-06",
+                "volume": 0,
+                "count": 0
+            },
+            {
+                "date": "2024-09-07",
+                "volume": 0,
+                "count": 0
+            },
+            {
+                "date": "2024-09-08",
+                "volume": 0,
+                "count": 0
+            },
+            {
+                "date": "2024-09-09",
+                "volume": 0,
+                "count": 0
+            },
+            {
+                "date": "2024-09-10",
+                "volume": 0,
+                "count": 0
+            },
+            {
+                "date": "2024-09-11",
+                "volume": 0,
+                "count": 0
+            },
+            {
+                "date": "2024-09-12",
+                "volume": 0,
+                "count": 0
+            },
+            {
+                "date": "2024-09-13",
+                "volume": 0,
+                "count": 0
+            },
+            {
+                "date": "2024-09-14",
+                "volume": 0,
+                "count": 0
+            },
+            {
+                "date": "2024-09-15",
+                "volume": 0,
+                "count": 0
+            },
+            {
+                "date": "2024-09-16",
+                "volume": 0,
+                "count": 0
+            },
+            {
+                "date": "2024-09-17",
+                "volume": 0,
+                "count": 0
+            },
+            {
+                "date": "2024-09-18",
+                "volume": 0,
+                "count": 0
+            },
+            {
+                "date": "2024-09-19",
+                "volume": 1517471,
+                "count": 7
+            },
+            {
+                "date": "2024-09-20",
+                "volume": 0,
+                "count": 0
+            },
+            {
+                "date": "2024-09-21",
+                "volume": 0,
+                "count": 0
+            },
+            {
+                "date": "2024-09-22",
+                "volume": 9760171,
+                "count": 17
+            },
+            {
+                "date": "2024-09-23",
+                "volume": 0,
+                "count": 0
+            },
+            {
+                "date": "2024-09-24",
+                "volume": 397686,
+                "count": 6
+            },
+            {
+                "date": "2024-09-25",
+                "volume": 228998,
+                "count": 5
+            },
+            {
+                "date": "2024-09-26",
+                "volume": 23424,
+                "count": 1
+            },
+            {
+                "date": "2024-09-27",
+                "volume": 0,
+                "count": 0
+            },
+            {
+                "date": "2024-09-28",
+                "volume": 0,
+                "count": 0
+            },
+            {
+                "date": "2024-09-29",
+                "volume": 0,
+                "count": 0
+            },
+            {
+                "date": "2024-09-30",
+                "volume": 105949,
+                "count": 3
+            },
+            {
+                "date": "2024-10-01",
+                "volume": 0,
+                "count": 0
+            },
+            {
+                "date": "2024-10-02",
+                "volume": 11960,
+                "count": 3
+            },
+            {
+                "date": "2024-10-03",
+                "volume": 19330301,
+                "count": 21
+            }
+        ]
+    }
+}
+]
+reponseData.value = values[0].data; 
+totalCount = values[0].data.totalCount;
+malwareRatio.value = Math.floor((values[0].data.totalMalware / values[0].data.totalCount) * 100);
+dlpRatio.value = Math.floor((values[0].data.totalDlp / values[0].data.totalCount) * 100);
+statistics.value = values[0].data.statistics;
+isApiOk.value = true;
+loading.value = false;
 
 </script>
