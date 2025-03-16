@@ -31,20 +31,83 @@ let isApiOk = ref(false)
 
 let policyDetails = ref(null)
 
-Promise.all([
-  dlpPolicyListApi()
-  ])
-  .then((values) => {
-    policyDetails.value = values[0]
-    // if(policyDetails.value[0].message.includes("No") || false) {
-    //   policyDetails.value = []
-    // }
-    isApiOk.value = true
-  })
-  .catch((err) => {
+// 원본용 코드
+// Promise.all([
+//   dlpPolicyListApi()
+//   ])
+//   .then((values) => {
+//     policyDetails.value = values[0]
+//     // if(policyDetails.value[0].message.includes("No") || false) {
+//     //   policyDetails.value = []
+//     // }
+//     isApiOk.value = true
+//   })
+//   .catch((err) => {
 
-  })
-  .finally(() => {
-    loading.value = false
-  })
+//   })
+//   .finally(() => {
+//     loading.value = false
+//   })
+
+
+/* 
+테스트용 성공으로 가정
+*/
+policyDetails.value = [
+    {
+        "policyId": 39,
+        "policyName": "DLP 정책 테스트",
+        "orgSaasId": 28,
+        "saasName": "slack",
+        "alias": "fffffff",
+        "description": "DLP 정책 테스트",
+        "identify": true,
+        "passport": true,
+        "drive": true,
+        "foreigner": false,
+        "comment": "탐지되면은 파일을 삭제해주세요."
+    },
+    {
+        "policyId": 40,
+        "policyName": "유빈 - TEST",
+        "orgSaasId": 28,
+        "saasName": "slack",
+        "alias": "fffffff",
+        "description": "테스트핑",
+        "identify": true,
+        "passport": true,
+        "drive": false,
+        "foreigner": false,
+        "comment": "TEST~"
+    },
+    {
+        "policyId": 42,
+        "policyName": "DLP 정책 테스트2",
+        "orgSaasId": 28,
+        "saasName": "slack",
+        "alias": "fffffff",
+        "description": "DLP 정책 테스트",
+        "identify": true,
+        "passport": true,
+        "drive": true,
+        "foreigner": true,
+        "comment": "탐지되면은 파일을 삭제해주세요."
+    },
+    {
+        "policyId": 43,
+        "policyName": "DLP 정책 테스트2",
+        "orgSaasId": 371,
+        "saasName": "o365",
+        "alias": "mstest",
+        "description": "DLP 정책 테스트",
+        "identify": true,
+        "passport": true,
+        "drive": true,
+        "foreigner": true,
+        "comment": "탐지되면은 파일을 삭제해주세요."
+    }
+]
+isApiOk.value = true
+loading.value = false
+
 </script>
