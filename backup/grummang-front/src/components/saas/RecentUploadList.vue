@@ -1,0 +1,60 @@
+<template>
+  <div class="p-4 bg-white border rounded-lg shadow-sm">
+    <h2 class="text-xl font-bold mb-4">최근 업로드 파일</h2>
+    <div class="overflow-x-auto">
+      <table class="w-full h-[22rem] table-fixed bg-white">
+        <thead class="bg-indigo-900">
+          <tr>
+            <th class="w-3/6 px-3 py-3 text-left text-sm font-bold text-white tracking-wider">파일명</th>
+            <th class="w-1/6 px-2 py-3 text-left text-sm font-bold text-white tracking-wider">사용자</th>
+            <th class="w-1/12 px-2 py-3 text-center text-sm font-bold text-white tracking-wider">유형</th>
+            <th class="w-1/6 px-2 py-3 text-center text-sm font-bold text-white tracking-wider">생성 시각</th>
+          </tr>
+        </thead>
+        <tbody class="bg-white divide-y divide-gray-200">
+          <tr v-for="(file, index) in files" :key="index" class="hover:bg-gray-100">
+            <td class="px-3 py-1">
+              <div class="flex items-center">
+                <img class="flex-shrink-0 size-4 rounded-full mr-2" :src="getSaasImg(convertSaasName(props.saas))" :alt="props.saas" />
+                <span class="w-full text-xs truncate">{{ file.fileName }}</span>
+              </div>
+            </td>
+            <td class="px-2 py-1">
+              <div class="w-full text-xs truncate">{{ file.uploadedBy }}</div>
+            </td>
+            <td class="px-2 py-1">
+              <div class="w-full text-center text-xs">{{ file.fileType }}</div>
+            </td>
+            <td class="px-2 py-1">
+              <div class="w-full text-center text-xs leading-3">{{ file.uploadTimestamp.replace("T", " ") }}</div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</template>
+
+<script setup>
+import { ref, defineProps } from 'vue';
+import '@mdi/font/css/materialdesignicons.css'; // Ensure you have the MDI icons installed
+import { getSaasImg, removeWordDate, convertSaasName } from '@/utils/utils.js'
+
+const props = defineProps({
+  fileRecent: {
+    type: Object,
+    required: true
+  },
+  saas: {
+    type: String,
+    required: true
+  }
+});
+
+const files = ref(props.fileRecent);
+
+</script>
+
+<style scoped>
+/* You can add custom styles here if needed */
+</style>
