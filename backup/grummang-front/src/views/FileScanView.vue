@@ -214,7 +214,7 @@ let values = [
                     },
                     "step2": {
                         "detect": true,
-                        "yara": "none"
+                        "yara": ["missing_certificate", "macro", "Unsupported File Format"]
                     }
                 }
             },
@@ -293,7 +293,7 @@ let values = [
                     },
                     "step2": {
                         "detect": true,
-                        "yara": "none"
+                        "yara": ["none"]
                     }
                 }
             },
@@ -372,7 +372,7 @@ let values = [
                     },
                     "step2": {
                         "detect": true,
-                        "yara": "none"
+                        "yara": ["none"]
                     }
                 }
             },
@@ -451,7 +451,7 @@ let values = [
                     },
                     "step2": {
                         "detect": false,
-                        "yara": "none"
+                        "yara": ["none"]
                     }
                 }
             },
@@ -578,7 +578,7 @@ let values = [
                     },
                     "step2": {
                         "detect": true,
-                        "yara": "missing_certificate"
+                        "yara": ["missing_certificate"]
                     }
                 }
             },
@@ -749,7 +749,7 @@ let values = [
                     },
                     "step2": {
                         "detect": true,
-                        "yara": "none"
+                        "yara": ["none"]
                     }
                 }
             },
@@ -814,7 +814,7 @@ let values = [
                     },
                     "step2": {
                         "detect": false,
-                        "yara": "none"
+                        "yara": ["none"]
                     }
                 }
             },
@@ -971,7 +971,7 @@ let values = [
                     },
                     "step2": {
                         "detect": true,
-                        "yara": "missing_certificate"
+                        "yara": ["missing_certificate"]
                     }
                 }
             },
@@ -1084,7 +1084,7 @@ let values = [
                     },
                     "step2": {
                         "detect": false,
-                        "yara": "none"
+                        "yara": ["none"]
                     }
                 }
             },
@@ -1233,7 +1233,7 @@ let values = [
                     },
                     "step2": {
                         "detect": false,
-                        "yara": "none"
+                        "yara": ["none"]
                     }
                 }
             },
@@ -1312,7 +1312,7 @@ let values = [
                     },
                     "step2": {
                         "detect": true,
-                        "yara": "none"
+                        "yara": ["none"]
                     }
                 }
             },
@@ -1377,7 +1377,7 @@ let values = [
                     },
                     "step2": {
                         "detect": true,
-                        "yara": "none"
+                        "yara": ["none"]
                     }
                 }
             },
@@ -1456,7 +1456,7 @@ let values = [
                     },
                     "step2": {
                         "detect": true,
-                        "yara": "none"
+                        "yara": ["none"]
                     }
                 }
             },
@@ -1521,7 +1521,7 @@ let values = [
                     },
                     "step2": {
                         "detect": false,
-                        "yara": "none"
+                        "yara": ["none"]
                     }
                 }
             },
@@ -1600,7 +1600,7 @@ let values = [
                     },
                     "step2": {
                         "detect": false,
-                        "yara": "none"
+                        "yara": ["none"]
                     }
                 }
             },
@@ -1668,7 +1668,7 @@ let values = [
                     },
                     "step2": {
                         "detect": false,
-                        "yara": "none"
+                        "yara": ["none"]
                     }
                 }
             },
@@ -1736,7 +1736,7 @@ let values = [
                     },
                     "step2": {
                         "detect": true,
-                        "yara": "none"
+                        "yara": ["none"]
                     }
                 }
             },
@@ -1815,7 +1815,7 @@ let values = [
                     },
                     "step2": {
                         "detect": true,
-                        "yara": "none"
+                        "yara": ["none"]
                     }
                 }
             },
@@ -1880,7 +1880,7 @@ let values = [
                     },
                     "step2": {
                         "detect": true,
-                        "yara": "none"
+                        "yara": ["none"]
                     }
                 }
             },
@@ -1945,7 +1945,7 @@ let values = [
                     },
                     "step2": {
                         "detect": false,
-                        "yara": "none"
+                        "yara": ["none"]
                     }
                 }
             },
@@ -1980,7 +1980,7 @@ let values = [
                     },
                     "step2": {
                         "detect": false,
-                        "yara": "none"
+                        "yara": ["none"]
                     }
                 }
             },
@@ -2045,7 +2045,7 @@ let values = [
                     },
                     "step2": {
                         "detect": false,
-                        "yara": "none"
+                        "yara": ["none"]
                     }
                 }
             },
@@ -2124,7 +2124,7 @@ let values = [
                     },
                     "step2": {
                         "detect": false,
-                        "yara": "none"
+                        "yara": ["none"]
                     }
                 }
             },
@@ -2189,7 +2189,7 @@ let values = [
                     },
                     "step2": {
                         "detect": false,
-                        "yara": "none"
+                        "yara": ["none"]
                     }
                 }
             },
@@ -2254,7 +2254,7 @@ let values = [
                     },
                     "step2": {
                         "detect": true,
-                        "yara": "Macro"
+                        "yara": ["Macro"]
                     }
                 }
             },
@@ -2333,7 +2333,7 @@ let values = [
                     },
                     "step2": {
                         "detect": true,
-                        "yara": "none"
+                        "yara": ["none"]
                     }
                 }
             },
@@ -2368,7 +2368,7 @@ let values = [
                     },
                     "step2": {
                         "detect": false,
-                        "yara": "none"
+                        "yara": ["none"]
                     }
                 }
             },
@@ -2447,7 +2447,7 @@ let values = [
                     },
                     "step2": {
                         "detect": true,
-                        "yara": "Macro"
+                        "yara": ["Macro"]
                     }
                 }
             },
@@ -2515,7 +2515,7 @@ let values = [
                     },
                     "step2": {
                         "detect": false,
-                        "yara": "none"
+                        "yara": ["none"]
                     }
                 }
             },
@@ -2564,7 +2564,7 @@ let values = [
                     },
                     "step2": {
                         "detect": true,
-                        "yara": "missing_certificate"
+                        "yara": ["missing_certificate"]
                     }
                 }
             },
@@ -2613,7 +2613,7 @@ let values = [
                     },
                     "step2": {
                         "detect": true,
-                        "yara": "missing_certificate"
+                        "yara": ["missing_certificate"]
                     }
                 }
             },
@@ -2678,7 +2678,7 @@ let values = [
                     },
                     "step2": {
                         "detect": false,
-                        "yara": "none"
+                        "yara": ["none"]
                     }
                 }
             },
@@ -2743,7 +2743,7 @@ let values = [
                     },
                     "step2": {
                         "detect": false,
-                        "yara": "none"
+                        "yara": ["none"]
                     }
                 }
             },
@@ -2822,7 +2822,7 @@ let values = [
                     },
                     "step2": {
                         "detect": true,
-                        "yara": "Macro"
+                        "yara": ["Macro"]
                     }
                 }
             },
@@ -2871,7 +2871,7 @@ let values = [
                     },
                     "step2": {
                         "detect": true,
-                        "yara": "missing_certificate"
+                        "yara": ["missing_certificate"]
                     }
                 }
             },
@@ -2971,7 +2971,7 @@ let values = [
                     },
                     "step2": {
                         "detect": false,
-                        "yara": "none"
+                        "yara": ["none"]
                     }
                 }
             },
@@ -3006,7 +3006,7 @@ let values = [
                     },
                     "step2": {
                         "detect": false,
-                        "yara": "none"
+                        "yara": ["none"]
                     }
                 }
             },
@@ -3055,7 +3055,7 @@ let values = [
                     },
                     "step2": {
                         "detect": true,
-                        "yara": "missing_certificate"
+                        "yara": ["missing_certificate"]
                     }
                 }
             },
@@ -3123,7 +3123,7 @@ let values = [
                     },
                     "step2": {
                         "detect": true,
-                        "yara": "Macro"
+                        "yara": ["Macro"]
                     }
                 }
             },
@@ -3158,7 +3158,7 @@ let values = [
                     },
                     "step2": {
                         "detect": false,
-                        "yara": "none"
+                        "yara": ["none"]
                     }
                 }
             },
@@ -3215,7 +3215,7 @@ let values = [
                     },
                     "step2": {
                         "detect": false,
-                        "yara": "none"
+                        "yara": ["none"]
                     }
                 }
             },
@@ -3250,7 +3250,7 @@ let values = [
                     },
                     "step2": {
                         "detect": false,
-                        "yara": "none"
+                        "yara": ["none"]
                     }
                 }
             },
@@ -3307,7 +3307,7 @@ let values = [
                     },
                     "step2": {
                         "detect": false,
-                        "yara": "none"
+                        "yara": ["none"]
                     }
                 }
             },
@@ -3364,7 +3364,7 @@ let values = [
                     },
                     "step2": {
                         "detect": false,
-                        "yara": "none"
+                        "yara": ["none"]
                     }
                 }
             },
@@ -3421,7 +3421,7 @@ let values = [
                     },
                     "step2": {
                         "detect": true,
-                        "yara": "Macro"
+                        "yara": ["Macro"]
                     }
                 }
             },
@@ -3491,7 +3491,7 @@ let values = [
                     },
                     "step2": {
                         "detect": false,
-                        "yara": "none"
+                        "yara": ["none"]
                     }
                 }
             },
@@ -3526,7 +3526,7 @@ let values = [
                     },
                     "step2": {
                         "detect": false,
-                        "yara": "none"
+                        "yara": ["none"]
                     }
                 }
             },
@@ -3583,7 +3583,7 @@ let values = [
                     },
                     "step2": {
                         "detect": false,
-                        "yara": "none"
+                        "yara": ["none"]
                     }
                 }
             },
@@ -3618,7 +3618,7 @@ let values = [
                     },
                     "step2": {
                         "detect": false,
-                        "yara": "none"
+                        "yara": ["none"]
                     }
                 }
             },
@@ -3653,7 +3653,7 @@ let values = [
                     },
                     "step2": {
                         "detect": false,
-                        "yara": "none"
+                        "yara": ["none"]
                     }
                 }
             },
@@ -3688,7 +3688,7 @@ let values = [
                     },
                     "step2": {
                         "detect": false,
-                        "yara": "none"
+                        "yara": ["none"]
                     }
                 }
             },
@@ -3723,7 +3723,7 @@ let values = [
                     },
                     "step2": {
                         "detect": false,
-                        "yara": "none"
+                        "yara": ["none"]
                     }
                 }
             },
@@ -3758,7 +3758,7 @@ let values = [
                     },
                     "step2": {
                         "detect": false,
-                        "yara": "none"
+                        "yara": ["none"]
                     }
                 }
             },
@@ -3837,7 +3837,7 @@ let values = [
                     },
                     "step2": {
                         "detect": false,
-                        "yara": "none"
+                        "yara": ["none"]
                     }
                 }
             },
@@ -3872,7 +3872,7 @@ let values = [
                     },
                     "step2": {
                         "detect": true,
-                        "yara": "Macro"
+                        "yara": ["Macro"]
                     }
                 }
             },
@@ -3921,7 +3921,7 @@ let values = [
                     },
                     "step2": {
                         "detect": false,
-                        "yara": "Unsupported File Format"
+                        "yara": ["Unsupported File Format"]
                     }
                 }
             },
@@ -3956,7 +3956,7 @@ let values = [
                     },
                     "step2": {
                         "detect": false,
-                        "yara": "none"
+                        "yara": ["none"]
                     }
                 }
             },
@@ -3991,7 +3991,7 @@ let values = [
                     },
                     "step2": {
                         "detect": false,
-                        "yara": "none"
+                        "yara": ["none"]
                     }
                 }
             },
@@ -4040,7 +4040,7 @@ let values = [
                     },
                     "step2": {
                         "detect": true,
-                        "yara": "missing_certificate"
+                        "yara": ["missing_certificate", "macro", "Unsupported File Format"]
                     }
                 }
             },
@@ -4075,7 +4075,7 @@ let values = [
                     },
                     "step2": {
                         "detect": false,
-                        "yara": "none"
+                        "yara": ["none"]
                     }
                 }
             },
@@ -4110,7 +4110,7 @@ let values = [
                     },
                     "step2": {
                         "detect": false,
-                        "yara": "none"
+                        "yara": ["none"]
                     }
                 }
             }
