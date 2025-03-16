@@ -47,26 +47,122 @@ let usersTop5 = ref(null);
 
 const saas = 'slack';
 
-Promise.all([
-  saasScoreApi(saas),
-  fileStatisticsApi(saas),
-  fileSizeApi(saas),
-  fileRecentApi(saas),
-  usersTop5Api(saas),
-  ]).then((values) => {
-  saasScore.value = values[0];
-  fileStatistics.value = values[1];
-  fileSize.value = values[2];
-  fileRecent.value = values[3];
-  usersTop5.value = values[4];
+// 윈본용 코드
+// Promise.all([
+//   saasScoreApi(saas),
+//   fileStatisticsApi(saas),
+//   fileSizeApi(saas),
+//   fileRecentApi(saas),
+//   usersTop5Api(saas),
+//   ]).then((values) => {
+//   saasScore.value = values[0];
+//   fileStatistics.value = values[1];
+//   fileSize.value = values[2];
+//   fileRecent.value = values[3];
+//   usersTop5.value = values[4];
 
-  if(values[1].connectedAccounts) {
-    isApiOk.value = true;
-  }
-}).catch((err) => {
-  isError.value = true;
-}).finally(() => {
-  loading.value = false;
-});
+//   if(values[1].connectedAccounts) {
+//     isApiOk.value = true;
+//   }
+// }).catch((err) => {
+//   isError.value = true;
+// }).finally(() => {
+//   loading.value = false;
+// });
+
+
+/* 
+테스트용으로 성공으로 가정
+*/
+// saasScore.value = values[0];
+fileStatistics.value = {
+    "totalFiles": 51,
+    "sensitiveFiles": 5,
+    "maliciousFiles": 6,
+    "connectedAccounts": 6
+};
+fileSize.value = {
+    "totalSize": 0.09375247,
+    "sensitiveSize": 0.012678361,
+    "maliciousSize": 0.0015407018
+};
+fileRecent.value = [
+    {
+        "fileName": "가족관계증명서(영문번역예시).pdf",
+        "uploadedBy": "HaHayy",
+        "fileType": "pdf",
+        "uploadTimestamp": "2024-10-03T16:46:48"
+    },
+    {
+        "fileName": "winmine.exe",
+        "uploadedBy": "yubin",
+        "fileType": "exe",
+        "uploadTimestamp": "2024-10-03T15:59:28"
+    },
+    {
+        "fileName": "image.png",
+        "uploadedBy": "hsp003636",
+        "fileType": "png",
+        "uploadTimestamp": "2024-10-03T11:35:16"
+    },
+    {
+        "fileName": "image.png",
+        "uploadedBy": "hsp003636",
+        "fileType": "png",
+        "uploadTimestamp": "2024-10-03T11:15:07"
+    },
+    {
+        "fileName": "image.png",
+        "uploadedBy": "hsp003636",
+        "fileType": "png",
+        "uploadTimestamp": "2024-10-03T11:13:50"
+    },
+    {
+        "fileName": "image.png",
+        "uploadedBy": "hsp003636",
+        "fileType": "png",
+        "uploadTimestamp": "2024-10-03T10:32:28"
+    },
+    {
+        "fileName": "파일삭제_테스트용-3.pptx",
+        "uploadedBy": "HaHayy",
+        "fileType": "pptx",
+        "uploadTimestamp": "2024-09-30T18:26:34"
+    },
+    {
+        "fileName": "파일삭제_테스트용-2.pptx",
+        "uploadedBy": "HaHayy",
+        "fileType": "pptx",
+        "uploadTimestamp": "2024-09-30T18:06:42"
+    },
+    {
+        "fileName": "파일삭제_테스트용.pptx",
+        "uploadedBy": "HaHayy",
+        "fileType": "pptx",
+        "uploadTimestamp": "2024-09-30T18:01:25"
+    },
+    {
+        "fileName": "image.png",
+        "uploadedBy": "yubin",
+        "fileType": "png",
+        "uploadTimestamp": "2024-09-25T18:20:19"
+    }
+];
+usersTop5.value = [
+    {
+        "userName": "yubin",
+        "sensitiveFilesCount": 0,
+        "maliciousFilesCount": 8,
+        "lastUploadedTimestamp": "2024-10-03T15:59:28"
+    },
+    {
+        "userName": "HaHayy",
+        "sensitiveFilesCount": 3,
+        "maliciousFilesCount": 4,
+        "lastUploadedTimestamp": "2024-10-03T16:46:48"
+    }
+]
+isApiOk.value = true;
+loading.value = false;
 
 </script>

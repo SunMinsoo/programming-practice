@@ -30,17 +30,23 @@ let isApiOk = ref(false)
 
 let emailDetails = ref(null)
 
-Promise.all([
-  alertsListApi()
-])
-.then((values) => {
-  emailDetails.value = values[0]
-  isApiOk.value = true
-})
-.catch((err) => {
+// 원본용 코드
+// Promise.all([
+//   alertsListApi()
+// ])
+// .then((values) => {
+//   emailDetails.value = values[0]
+//   isApiOk.value = true
+// })
+// .catch((err) => {
   
-})
-.finally(() => {
-  loading.value = false
-})
+// })
+// .finally(() => {
+//   loading.value = false
+// })
+
+// 테스트용으로 성공으로 가정
+emailDetails.value = { data: ""}
+isApiOk.value = true
+loading.value = false
 </script>
