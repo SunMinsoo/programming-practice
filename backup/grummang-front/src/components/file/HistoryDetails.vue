@@ -251,10 +251,174 @@ const openHistoryVisualizationModal = () => {
     let data = {
       eventId: selectedHistory.value.eventId
     }
-    historyVisualizatuonApi(data).then((response) => {
-      visualizationInfo.value = response
-      isHistoryVisualizationModalOpen.value = true
-    })
+
+    // 원본용 코드
+    // historyVisualizatuonApi(data).then((response) => {
+    //   visualizationInfo.value = response
+    //   isHistoryVisualizationModalOpen.value = true
+    // })
+
+    /*
+    테스트용 성공으로 가정
+    */
+    visualizationInfo.value = {
+      "data": {
+        "originNode": "event8",
+        "slack": [
+          {
+            "eventId": "event1",
+            "eventType": "file_upload",
+            "saas": "Slack",
+            "fileName": "project_plan.docx",
+            "email": "alice@company.com",
+            "eventTs": "2024-06-23T09:00:00Z",
+            "uploadChannel": "general",
+            "similarity": 96,
+            "dlp": false,
+            "threat": false
+          },
+          {
+            "eventId": "event12",
+            "eventType": "file_delete",
+            "saas": "Slack",
+            "fileName": "project_plan.docx",
+            "email": "alice@company.com",
+            "eventTs": "2024-07-23T09:00:00Z",
+            "uploadChannel": "general",
+            "similarity": 96,
+            "dlp": false,
+            "threat": false
+          },
+          {
+            "eventId": "event2",
+            "eventType": "file_upload",
+            "saas": "Slack",
+            "fileName": "project_plan_v2.docx",
+            "email": "alice@company.com",
+            "eventTs": "2024-06-27T09:30:00Z",
+            "uploadChannel": "general",
+            "similarity": 90,
+            "dlp": false,
+            "threat": false
+          },
+          {
+            "eventId": "event11",
+            "eventType": "file_delete",
+            "saas": "Slack",
+            "fileName": "project_plan_v2.docx",
+            "email": "alice@company.com",
+            "eventTs": "2024-07-27T09:30:00Z",
+            "uploadChannel": "general",
+            "similarity": 90,
+            "dlp": false,
+            "threat": false
+          },
+          {
+            "eventId": "event3",
+            "eventType": "file_upload",
+            "saas": "Slack",
+            "fileName": "project_plan_v3.docx",
+            "email": "alice@company.com",
+            "eventTs": "2024-06-28T10:00:00Z",
+            "uploadChannel": "general",
+            "similarity": 85,
+            "dlp": true,
+            "threat": true
+          },
+          {
+            "eventId": "event4",
+            "eventType": "file_delete",
+            "saas": "Slack",
+            "fileName": "project_plan_v3.docx",
+            "email": "alice@company.com",
+            "eventTs": "2024-07-05T10:00:00Z",
+            "uploadChannel": "general",
+            "similarity": 85,
+            "dlp": true,
+            "threat": true
+          }
+        ],
+        "googleDrive": [
+          {
+            "eventId": "event6",
+            "eventType": "file_upload",
+            "saas": "GoogleDrive",
+            "fileName": "project_plan.docx",
+            "email": "carol@company.com",
+            "eventTs": "2024-06-25T09:10:00Z",
+            "uploadChannel": "Finance",
+            "similarity": 96,
+            "dlp": false,
+            "threat": false
+          },
+          {
+            "eventId": "event7",
+            "eventType": "file_change",
+            "saas": "GoogleDrive",
+            "fileName": "project_plan_최종.docx",
+            "email": "carol@company.com",
+            "eventTs": "2024-06-27T09:40:00Z",
+            "uploadChannel": "Finance",
+            "similarity": 94,
+            "dlp": false,
+            "threat": false
+          },
+          {
+            "eventId": "event8",
+            "eventType": "file_change",
+            "saas": "GoogleDrive",
+            "fileName": "project_plan_최종_마무리.docx",
+            "email": "carol@company.com",
+            "eventTs": "2024-07-01T14:40:00Z",
+            "uploadChannel": "Finance",
+            "similarity": 100,
+            "dlp": false,
+            "threat": false
+          }
+        ],
+        "o365": [
+          {
+            "eventId": "event9",
+            "eventType": "file_upload",
+            "saas": "Microsoft365",
+            "fileName": "project_plan.docx",
+            "email": "eve@company.com",
+            "eventTs": "2024-07-10T12:40:00Z",
+            "uploadChannel": "Legal",
+            "similarity": 100,
+            "dlp": false,
+            "threat": false
+          },
+          {
+            "eventId": "event10",
+            "eventType": "file_upload",
+            "saas": "Microsoft365",
+            "fileName": "다른_project_plan_v1.docx",
+            "email": "eve@company.com",
+            "eventTs": "2024-09-20T18:12:00Z",
+            "uploadChannel": "Legal",
+            "similarity": 8,
+            "dlp": false,
+            "threat": false
+          }
+        ],
+        "edges": [
+          {"source": "event1", "target": "event6", "label": "File_Hash_Match"},
+          {"source": "event1", "target": "event2", "label": "File_Name_Similarity"},
+          {"source": "event1", "target": "event12", "label": "File_SaaS_Match"},
+          {"source": "event2", "target": "event3", "label": "File_Name_Similarity"},
+          {"source": "event2", "target": "event11", "label": "File_SaaS_Match"},
+          {"source": "event3", "target": "event4", "label": "File_SaaS_Match"},
+          {"source": "event6", "target": "event7", "label": "File_Name_Similarity"},
+          {"source": "event7", "target": "event8", "label": "File_Name_Similarity"},
+          {"source": "event8", "target": "event9", "label": "File_Hash_Match"},
+          {"source": "event8", "target": "event10", "label": "File_Name_Similarity"},
+        ]
+      }
+    }
+    isHistoryVisualizationModalOpen.value = true
+
+
   } else {
     alert('시각화할 파일을 선택해주세요.')
   }
