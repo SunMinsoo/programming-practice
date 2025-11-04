@@ -1,5 +1,6 @@
 package com.example.backend.domain.user.entity;
 
+import com.example.backend.domain.user.dto.UserRequestDTO;
 import jakarta.persistence.*;
 import lombok.*;
 import org.springframework.data.annotation.CreatedDate;
@@ -30,6 +31,9 @@ public class UserEntity {
     @Column(name = "is_lock", nullable = false)
     private Boolean isLock;
 
+    @Column(name = "is_social", nullable = false)
+    private Boolean isSocial;
+
     @Enumerated(EnumType.STRING)
     @Column(name = "social_provider_type")
     private SocialProviderType socialProviderType;
@@ -52,5 +56,8 @@ public class UserEntity {
     @Column(name = "updated_data")
     private LocalDateTime updatedDate;
 
-
+    public void updateUser(UserRequestDTO dto) {
+        this.email = dto.getEmail();
+        this.nickname = dto.getNickname();
+    }
 }
