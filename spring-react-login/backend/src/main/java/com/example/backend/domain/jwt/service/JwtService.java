@@ -2,8 +2,10 @@ package com.example.backend.domain.jwt.service;
 
 import com.example.backend.domain.jwt.entity.RefreshEntity;
 import com.example.backend.domain.jwt.repository.RefreshRepository;
+import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+@Service
 public class JwtService {
 
     private final RefreshRepository refreshRepository;
