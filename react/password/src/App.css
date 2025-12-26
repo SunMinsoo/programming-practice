@@ -1,0 +1,67 @@
+/* 메인 컨테이너 */
+.app-container {
+  max-width: 600px;     
+  margin: 30px auto;      
+  padding: 20px;
+  border: 1px solid #ccc;
+}
+
+.app-title {
+  margin-bottom: 20px;     /* 아래 여백 */
+}
+
+/* 비밀번호 입력 영역 */
+.password-input-container {
+  margin-bottom: 15px;
+}
+
+.password-label {
+  display: block;          /* 블록 요소로 표시 */
+  margin-bottom: 5px;
+  font-weight: bold;       /* 굵게 */
+}
+
+.password-input {
+  width: 100%;             /* 전체 너비 */
+  padding: 8px;            /* 안쪽 여백 */
+  border: 1px solid #ccc;
+}
+
+/* 검증 목록 영역 */
+.validation-container {
+  margin-bottom: 15px;
+}
+
+.validation-list {
+  margin: 5px 0;
+  padding-left: 20px;
+}
+
+.validation-list li {
+  margin-bottom: 4px;
+}
+
+.validation-list .valid {
+  color: green;            /* 통과 항목은 초록색 */
+}
+
+.validation-list .invalid {
+  color: gray;             /* 미통과 항목은 회색 */
+}
+
+.kisa-container {
+  padding: 20px;
+  text-align: center;      
+  border: 2px solid #333;
+}
+
+.kisa-result {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.kisa-error {
+  margin-top: 10px;
+  font-size: 14px;
+  color: #666;
+}

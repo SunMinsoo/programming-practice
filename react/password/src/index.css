@@ -1,0 +1,5 @@
+body {
+  margin: 0;                          /* 기본 여백 제거 */
+  font-family: Arial, sans-serif;     /* 폰트 설정 */
+  background: #f9f9f9;                /* 배경색 */
+}
