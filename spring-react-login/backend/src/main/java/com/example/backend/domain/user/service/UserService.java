@@ -6,14 +6,16 @@ import com.example.backend.domain.user.entity.UserRoleType;
 import com.example.backend.domain.user.repository.UserRepository;
 import org.springframework.security.access.AccessDeniedException;
 import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.core.userdetails.User;
+import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
-import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 @Service
-public class UserService {
+public class UserService implements UserDetailsService {
 
     private final UserRepository userRepository;
     private final PasswordEncoder passwordEncoder;
@@ -56,8 +58,21 @@ public class UserService {
     }
 
     /** 3. 자체 로그인
-     *
+     * 회원 로그인 시는 읽기만 수행, implements로 해당 메소드를 Override가 필수
      */
+    @Transactional(readOnly = true)
+    @Override
+    public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
+        UserEntity entity = userRepository.findByUsernameAndIsLockAndIsSocial(username, false, false)
+                .orElseThrow(() -> new UsernameNotFoundException(username));
+
+        return User.builder()
+                .username(entity.getUsername())
+                .password(entity.getPassword())
+                .roles(entity.getRoleType().name())
+                .accountExpired(entity.getIsLock())
+                .build();
+    }
 
     /** 4. 자체 로그인 회원 정보 수정
      * 회원 정보 수정 시 자체 로그인, 여브 및 잠김 여부 확인 필요
